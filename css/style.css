@@ -1,0 +1,323 @@
+@font-face {
+  font-family: arial;
+  src: url(../fonts/ARIAL.ttf);
+}
+@font-face {
+  font-family: arialb;
+  src: url(../fonts/ARIALBD.ttf);
+}
+
+@font-face {
+  font-family: tahma;
+  src: url(../fonts/Tahoma.ttf);
+}
+
+
+@font-face {
+  font-family: time;
+  src: url(../fonts/times.ttf);
+}
+
+
+
+body{
+    background-color: #0f121f;
+}
+
+*{
+    box-sizing: border-box;
+    line-height: 1.65;
+    outline: none;
+
+}
+nav img{
+	width: 200px;
+	height: 55px;
+}
+nav{
+	    border-bottom: 5px solid #252a44;
+
+}
+.navbar-default{
+	    background-color: #131625;
+    padding-left: 19px;
+    padding-right: 19px;
+    box-sizing: border-box;
+    width: 100%;
+   
+ 
+    border:0;
+	    border-bottom: 5px solid #252a44;
+
+        color: #ffffffcc;
+
+}
+
+.navbar-default .navbar-nav>li>a{
+        color: #ffffffcc;
+        font-size: 15px;
+        transition: 0.2s;
+
+
+
+}
+
+.searsh input{
+	border:1px solid #383f66;
+	width: 100%;
+	background: transparent;
+	    position: relative;
+	    border-radius: 25px;
+	    		    padding: 5px 30px;
+	    		    color: #ffffff;
+	transition: 0.2s;
+
+
+}
+
+
+.searsh input:focus{
+	border-color: #2483ff;
+	transition: 0.2s;
+}
+.searsh{
+color: #ffffff;
+position: relative;
+padding: 0 10px;
+}
+
+.searsh i{
+
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+.navbar {
+	    border-bottom: 5px solid #252a44;
+	        margin: 0;
+
+
+
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+
+    color: rgb(252, 145, 83) !important;
+	        transition: 0.2s;
+
+}
+.navbar-default .navbar-nav>li>a:focus{
+
+    color: rgb(252, 145, 83) !important;
+	        transition: 0.2s;
+
+}
+
+.navbar-brand{
+	padding: 0;
+}
+
+.navbar-default .navbar-toggle{
+	color: #ffffff;
+	background-color: transparent;
+	border:0;
+	    transition: 0.2s;
+
+}
+.navbar-default .navbar-toggle:hover{
+    color: rgb(252, 145, 83) !important;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+    	    transition: 0.2;
+
+}
+.navbar-toggle .collapsed{
+	 color: rgb(252, 145, 83) !important;
+	    transition: 0.2;
+
+
+}
+.navbar-default .navbar-toggle .icon-bar {
+
+	    color: rgb(252, 145, 83) !important;
+	    transition: 0.2;
+
+
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	 color: rgb(252, 145, 83) !important;
+	 background-color: transparent !important;
+	    transition: 0.2;
+
+}
+.navbar-default .navbar-toggle:hover .icon-bar{
+
+		 background-color: rgb(252, 145, 83) !important;
+		 transition: 0.2s;
+
+
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	border:0;
+}
+
+.left_tab{
+	width: 300px;
+	height: 800px;
+	border-right: 5px solid #252a44;
+	padding: 15px 5px;
+	background-color: #141826;
+	      
+}
+.main_coins ul{
+	padding: 0;
+	list-style: none;
+	border:1px solid #383f66;
+border-radius: 4px;
+    width: 100%;
+    text-align: center;
+
+}
+.main_coins ul li{
+	display: inline-block;
+}
+.main_coins ul li a{
+
+	color: #b0b8db;
+	margin: 5px 4px;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.main_coins {
+	margin-top: 15px;
+	padding: 0 10px;
+}
+
+.coin_active{
+	background-color: #2483ff;
+color: #ffffff!important;}
+
+
+
+
+.coin_head ul li{
+
+display: flex;
+justify-content: space-between;
+}
+
+.coin_head a{
+
+	color: #61688a;
+	text-decoration: none;
+	font-size: 12px;
+
+}
+.coin_head ul {
+	padding: 0;
+	list-style: none;
+}
+
+ .coin_body{
+overflow-y: scroll;
+padding: 5px;
+height: 670px;
+}
+
+
+.coin_body ul{
+
+	padding: 0;
+	list-style: none;
+
+
+}
+
+.coin_body ul li{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.coin_row a{
+	text-decoration: none;
+}
+.coin_row{
+	padding: 0 10px;
+}
+.coin_head{
+		padding: 0 10px;
+
+}
+.coin_row a:hover{
+	text-decoration: none;
+	color: all;
+}
+
+
+.coin_name{
+	width: 45%;
+	color: #b0b8db;
+}
+.coin_name:hover{
+	color: #b0b8db;
+}
+
+.head_coin{
+	width: 45%;
+}
+
+.head_coin{
+}
+
+.price{
+	color: #f4f9ff;
+}
+
+.price:hover{
+	color: #f4f9ff;
+}
+
+.coin_body::-webkit-scrollbar-track
+{
+	
+	border-radius: 25px;
+	background-color: transparent;
+
+}
+.coin_body::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+	height: 25px !important;
+
+}
+
+.coin_body::-webkit-scrollbar-thumb
+{
+	border-radius: 25px;
+	background-color: #252a448c;
+}
+
+.coin_row:hover{
+	background-color: #0f121f !important;
+}
+
+.coin_body ul li:hover{
+		background-color: #0f121f !important;
+
+
+}
+
+
+.price{font-size: 13px;}
+
+.rate{
+	color: #00b464;
+}
