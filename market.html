@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Market</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+
+
+           
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.png" ></a>
+    </div>
+
+
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav ">
+        <li class=""><a href="#">Exchange</a></li>
+        <li><a href="#">List A Coin</a></li>
+         <li><a href="#">Signup</a></li>
+         <li><a href="#">Login</a></li>
+
+
+ 
+
+
+        
+      </ul>
+
+      
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+   
+
+
+   <div id="main_app">
+
+
+    <div class="left_tab col-md-2 col-sm-3">
+      <div class="searsh">
+        <input type="text" name="" placeholder="Search">
+        <i class="fas fa-search"></i>
+      </div>
+
+      <div class="main_coins">
+      
+      <ul>
+        <li><a href="">Fav</a></li>
+        <li class="coin_active"><a href="" class="coin_active">USDT</a></li>
+        <li><a href="">HUSD</a></li>
+        <li><a href="">BTC</a></li>
+        <li><a href="">ETH</a></li>
+        <li><a href="">HT</a></li>
+        <li><a href="">ALTS</a></li>
+
+      </ul>
+    </div>
+
+
+    <div class="coins">
+      <div class="coin_head">
+        <ul>
+          <li><a class="head_coin">Coin</a> <a>Last Price</a>  <a>Change</a></li>
+        </ul>
+        
+      </div>
+
+      <div class="coin_body">
+
+        <ul >
+            <li v-for="coin in coins" class="coin_row" > <a href="#" class="coin_name">{{coin.name}}</a> <a href="#" class="price">{{coin.price}}</a> <a href="#" class="rate" @click="coloro" v-bind:class = "coin.value <= 0 ? 'sell_colr':'buy_colr'" > {{coin.value}} </a></li>
+
+        </ul>
+
+
+        
+      </div>
+
+      
+
+
+    </div>
+
+
+    </div>
+
+
+    <div class=" chart col-md-6 col-sm-6 col-xs-12">
+    <iframe id="tradingview_283f0" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_283f0&amp;symbol=BITSTAMP%3ABTCUSD&amp;interval=D&amp;hidesidetoolbar=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=F1F3F6&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=Dark&amp;style=1&amp;timezone=Etc%2FUTC&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en&amp;utm_source=crypo-nextjs.netlify.app&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=BITSTAMP%3ABTCUSD" style="width: 100%; height: 450px; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+      <div class="exchange">
+        
+          <div class="ex_nav">
+            <a href="" class="ex-mlink">Exchange</a>
+            <div class="ex-slink">
+              <a href="">Credit card</a>
+             <a href="">3X Long</a>
+           <a href="">3X Short</a>
+           <a href="">5X Margin</a>
+
+            </div>
+          </div>
+
+          <div class="form_in">
+            
+            <div class="col-md-6 col-sm-6 col-xs-12 right-br">
+              <div class="trading">
+                <a href="#">Limit</a>
+                <a href="#">Market</a>
+                <a href="#">Stop-Limit</a>
+                <a href="#">Trigger Order</a>
+              </div>
+
+
+               <div class="trading_form">
+                
+
+                <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Price</label>
+                             <input type="number" autocomplete="off" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0.0000" :value ='amount* 4000.000 ' >
+                               <small id="emailHelp" class="form-text text-muted">USDT</small>
+                                      </div>
+
+
+                                       <div class="form-group">
+                <label for="exampleInputEmail1">Amount</label>
+                             <input type="number" autocomplete="off" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0.0000" :value="amount/4000" v-model='amount'>
+                               <small id="emailHelp" class="form-text text-muted">BTC</small>
+                                      </div>
+
+                      </form>
+
+
+
+              </div>
+
+              <div class="total">
+                <h6>Total</h6>
+                <h5 > {{amount * 4000.000}} USDT</h5>
+
+
+              </div>
+              <div class="buy"><a href="">Buy</a></div>
+
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="trading">
+                <a href="#">Limit</a>
+                <a href="#">Market</a>
+                <a href="#">Stop-Limit</a>
+                <a href="#">Trigger Order</a>
+              </div>
+
+
+               <div class="trading_form">
+                
+
+                <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Price</label>
+                             <input type="number" autocomplete="off" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0.0000" :value ='amount* 4000.000 ' >
+                               <small id="emailHelp" class="form-text text-muted">USDT</small>
+                                      </div>
+
+
+                                       <div class="form-group">
+                <label for="exampleInputEmail1">Amount</label>
+                             <input type="number" autocomplete="off" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0.0000" :value="amount/4000" v-model='amount'>
+                               <small id="emailHelp" class="form-text text-muted">BTC</small>
+                                      </div>
+
+                      </form>
+
+
+
+              </div>
+
+              <div class="total">
+                <h6>Total</h6>
+                <h5 > {{amount * 4000.000}} USDT</h5>
+
+
+              </div>
+              <div class="sell"><a href="">Sell</a></div>
+
+            </div>
+
+          </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="col-md-2 col-sm-3 col-xs-12 or_book">
+      
+      <div class="orderbook">
+
+        <h3>Orderbook</h3>
+
+        
+
+
+      </div>
+
+      <div class="sort">
+
+
+        <ul>
+          
+          <li class="red_green"><svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>分组 30</title>
+    <desc>Created with Sketch.</desc>
+    <g id="交易页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="杠杆交易--爆仓" transform="translate(-1333.000000, -903.000000)" fill-rule="nonzero">
+            <g id="盘口" transform="translate(1314.000000, 46.000000)">
+                <g id="深度" transform="translate(0.000000, 845.000000)">
+                    <g id="分组-32-copy" transform="translate(16.000000, 9.000000)">
+                        <g id="分组-31" transform="translate(3.000000, 3.000000)">
+                            <g id="分组-30">
+                                <g id="Group-89" transform="translate(6.000000, 2.500000) scale(1, -1) translate(-6.000000, -2.500000) " fill="#EE4444">
+                                    <g id="Group-88">
+                                        <path d="M0,1 L0,0 L12,0 L12,1 L0,1 Z M3,4 L3,3 L12,3 L12,4 L3,4 Z M0,0 L1,0 L1,4.5 L0,4.5 L0,0 Z" id="Combined-Shape"></path>
+                                    </g>
+                                </g>
+                                <g id="Group-89-Copy" transform="translate(0.000000, 7.000000)" fill="#1B9680">
+                                    <g id="Group-88">
+                                        <path d="M0,1 L0,0 L12,0 L12,1 L0,1 Z M3,4 L3,3 L12,3 L12,4 L3,4 Z M0,0 L1,0 L1,4.5 L0,4.5 L0,0 Z" id="Combined-Shape"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></li>
+
+
+
+<li class="green">  <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 89 Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="交易页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="杠杆交易--爆仓" transform="translate(-1361.000000, -903.000000)" fill="#1B9680" fill-rule="nonzero">
+            <g id="盘口" transform="translate(1314.000000, 46.000000)">
+                <g id="深度" transform="translate(0.000000, 845.000000)">
+                    <g id="分组-32-copy" transform="translate(16.000000, 9.000000)">
+                        <g id="分组-31" transform="translate(3.000000, 3.000000)">
+                            <g id="Group-89-Copy-3" transform="translate(28.000000, 0.000000)">
+                                <g id="Group-88">
+                                    <path d="M0,1 L0,0 L12,0 L12,1 L0,1 Z M3.034162,5 L3.034162,4 L12,4 L12,5 L3.034162,5 Z M3.034162,8 L3.034162,7 L12,7 L12,8 L3.034162,8 Z M3.034162,11 L3.034162,10 L12,10 L12,11 L3.034162,11 Z M0,0 L1,0 L1,11.5 L0,11.5 L0,0 Z" id="Combined-Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></li>
+
+
+
+<li class="red"><svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 89 Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="交易页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="杠杆交易--爆仓" transform="translate(-1389.000000, -903.000000)" fill="#EE4444" fill-rule="nonzero">
+            <g id="盘口" transform="translate(1314.000000, 46.000000)">
+                <g id="深度" transform="translate(0.000000, 845.000000)">
+                    <g id="分组-32-copy" transform="translate(16.000000, 9.000000)">
+                        <g id="分组-31" transform="translate(3.000000, 3.000000)">
+                            <g id="Group-89-Copy-4" transform="translate(62.000000, 6.000000) scale(1, -1) translate(-62.000000, -6.000000) translate(56.000000, 0.000000)">
+                                <g id="Group-88">
+                                    <path d="M0,1 L0,0 L12,0 L12,1 L0,1 Z M3.06815765,5 L3.06815765,4 L12,4 L12,5 L3.06815765,5 Z M3.06815765,8 L3.06815765,7 L12,7 L12,8 L3.06815765,8 Z M3.06815765,11 L3.06815765,10 L12,10 L12,11 L3.06815765,11 Z M0,0 L1,0 L1,11.5 L0,11.5 L0,0 Z" id="Combined-Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></li>
+
+
+
+        </ul>
+       
+
+
+        
+      </div>
+
+
+
+
+      <div class="book_head">
+        <h6>Price (USDT)</h6>
+        <h6>Amount (BTC)</h6>
+        <h6>Sum (BTC)</h6>
+        
+
+      </div>
+
+
+      <div class="book_red_body">
+        <ul>
+          <li v-for="prise in trade"><p>{{prise.usdt}}</p> <p> {{prise.amount}}</p> <p>{{prise.sum}}</p></li>
+
+
+        </ul>
+      </div>
+
+
+
+      <div class="stables">
+        <h5>40192.57</h5>
+        <h6>≈ 40167.09 USD</h6>
+        <a href="#">More</a>
+      </div>
+
+
+ <div class="book_green_body">
+        <ul>
+          <li v-for="prise in trade"><p>{{prise.usdt}}</p> <p> {{prise.amount}}</p> <p>{{prise.sum}}</p></li>
+
+
+        </ul>
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+        <div class="col-md-2 col-sm-3 col-xs-12 m_trade">
+          <h3>Market Trades</h3>
+          <div class="market_trade">
+            
+
+            <div class="book_head">
+        <h6 style="width: 25%">Time</h6>
+        <h6>Price (USDT)</h6>
+        <h6>Amount (BTC)</h6>
+        
+
+      </div>
+
+      <div class="trade-view">
+
+        <ul>
+          <li v-for="amount in market"><p class="time">{{getNow()}}</p> <p class="price_market">{{amount.price}}</p> <p class="amo">{{amount.ammm}}</p></li>
+
+        </ul>
+        
+
+      </div>
+          </div>
+
+        </div>
+
+<div class="fixxed_btun">
+  <div class="orderbook"> 
+    <a  id="order">
+    Orderbook
+  </a>
+</div>
+
+<div class="orderbook"> 
+    <a id="trade">
+    Trades
+  </a>
+</div>
+  
+  
+</div>
+
+
+<div class="col-md-12 col-sm-12 col-xs-12  recent_trades">
+  <div class="nav_recent">
+    <a href="#" class="ex-mlink">Recent Trades</a> 
+    <a href="">My Orders</a>
+    <a href="">Active Order</a>
+
+  </div>
+
+  <div class="recent_body">
+    <div class="row small_nav">
+      
+
+      <div class="col-md-3 col-sm-2 col-xs-3" ><h5>Time</h5></div>
+      <div class="col-md-1 col-sm-2 col-xs-2" ><h5>Type</h5></div>
+      <div class="col-md-3 col-sm-3 col-xs-2" ><h5>Price</h5></div>
+      <div class="col-md-2 col-sm-2 col-xs-2" ><h5>Quantity</h5></div>
+      <div class="col-md-3 col-sm-3 col-xs-3" ><h5>Total</h5></div>
+
+
+    </div>
+
+    <div class="row resent_num" v-for="res in recent ">
+       <div class="col-md-3 col-sm-2 col-xs-3" ><h4>{{getNow()}}</h4></div>
+      <div class="col-md-1 col-sm-2 col-xs-2"   ><h4 v-bind:class = "res.type === 'sell' ?'sell_colr':'buy_colr'">{{res.type}}</h4></div>
+      <div class="col-md-3 col-sm-3 col-xs-2" ><h4 v-bind:class = "res.type === 'sell' ?'sell_colr':'buy_colr'">{{res.price}}</h4></div>
+      <div class="col-md-2 col-sm-2 col-xs-2" ><h4>{{res.ammm}}</h4></div>
+      <div class="col-md-3 col-sm-3 col-xs-3" ><h4>{{res.total}}</h4></div>
+      
+
+    </div>
+    
+
+  </div>
+  
+
+</div>
+
+
+
+  </div>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+   
+
+            <script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript " src="js/script.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+</html>
